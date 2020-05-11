@@ -1,0 +1,94 @@
+﻿<Window x:Class="WPFEffects.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:AboutMe="clr-namespace:WPFEffects.Modules.AboutMe"
+        xmlns:CustomFrms="clr-namespace:WPFEffects.Core.CustomFrms"
+        xmlns:local="clr-namespace:WPFEffects" WindowStartupLocation="CenterScreen"
+        Background="Transparent" AllowsTransparency="True"
+        WindowStyle="None" WindowState="Normal"
+        Title="WPF Effect Demos" Height="626" Width="1166">
+    <Border Margin="3" BorderBrush="Gray">
+        <Border.Effect>
+            <DropShadowEffect Color="White" ShadowDepth="0" 
+                              BlurRadius="3" Opacity="0.5"/>
+        </Border.Effect>
+        <Grid x:Name="GdRoot">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="GdNav" Grid.RowSpan="2" Background="#FF2D2D30">
+                <TextBlock Text="WPF 炫酷UI" Foreground="White" 
+                           FontSize="30" VerticalAlignment="Top"
+                           HorizontalAlignment="Center" Margin="0,25,0,0"/>
+                <Border Margin="0,80,0,0" BorderThickness="0,1,0,0" 
+                        BorderBrush="{StaticResource ColorBrush.LightWhite}">
+                    <ScrollViewer Style="{StaticResource ScrollViewer.Normal}">
+                        <StackPanel x:Name="SpNavItems">
+                            <CustomFrms:ListMenuBox Text="支持作者" IconData="{StaticResource PathData.Heart}" 
+                                                    Key="AboutMe"/>
+                            <CustomFrms:ListMenuBox Text="组件" IconData="{StaticResource PathData.SettingsOutline}">
+                                <CustomFrms:ListMenuItem Text="PathIcon" Key="PathData"/>
+                            </CustomFrms:ListMenuBox>
+                            <CustomFrms:ListMenuBox Text="效果" IconData="{StaticResource PathData.Creation}">
+                                <CustomFrms:ListMenuItem Text="文字效果" Key="TextblockEffect"/>
+                            </CustomFrms:ListMenuBox>
+                            <CustomFrms:ListMenuBox Text="富媒体墙" IconData="{StaticResource PathData.Clover}">
+                                <CustomFrms:ListMenuItem Text="弧形旋转" Key="Carousel"/>
+                                <CustomFrms:ListMenuItem Text="弧形旋转3D" Key="Carousel3D"/>
+                                <CustomFrms:ListMenuItem Text="线点动画" Key="AnimLine"/>
+                            </CustomFrms:ListMenuBox>
+                            <CustomFrms:ListMenuBox Text="图表" IconData="{StaticResource PathData.ChartScatterplotHexbin}">
+                                <CustomFrms:ListMenuItem Text="柱状图" Key="HistogramChart"/>
+                                <CustomFrms:ListMenuItem Text="饼状图" Key="PieChart"/>
+                                <CustomFrms:ListMenuItem Text="弧形图" Key="RadianChart"/>
+                            </CustomFrms:ListMenuBox>
+                            <CustomFrms:ListMenuBox Text="图像处理" IconData="{StaticResource PathData.FileImageRegular}">
+                                <CustomFrms:ListMenuItem Text="图片分隔" Key="ImgCoordinate"/>
+                            </CustomFrms:ListMenuBox>
+                            <CustomFrms:ListMenuBox Text="性能优化" IconData="{StaticResource PathData.BroomSolid}">
+                                <CustomFrms:ListMenuItem Text="图片加载建议" Key="ImagePerformance"/>
+                                <CustomFrms:ListMenuItem Text="图片加载反例" Key="ImagePerformance2"/>
+                            </CustomFrms:ListMenuBox>
+                            <CustomFrms:ListMenuBox Text="穿帮硬广" IconData="{StaticResource PathData.Bullhorn}"
+                                                    Key="Advertise"/>
+
+                        </StackPanel>
+                    </ScrollViewer>
+                </Border>
+            </Grid>
+            <Grid x:Name="GdHeader" Grid.Column="1" Background="#FF2D2D30">
+                <Rectangle x:Name="RectHeader" Fill="Transparent"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" 
+                            VerticalAlignment="Top">
+                    <CustomFrms:IconMenu x:Name="MenuShutdown" 
+                        IconData="{StaticResource PathData.Close}" 
+                        Width="50" Height="40"/>
+                </StackPanel>
+                <Grid Height="40" VerticalAlignment="Bottom" Background="#0CFFFFFF">
+                    <CustomFrms:IconMenu x:Name="MenuLeft" HorizontalAlignment="Left"
+                        IconData="{StaticResource PathData.ChevronDoubleLeft}" 
+                        Width="40" Height="40"/>
+                    <CustomFrms:IconMenu x:Name="MenuRight" HorizontalAlignment="Right"
+                        IconData="{StaticResource PathData.ChevronDoubleRight}" 
+                        Width="40" Height="40" Margin="0,0,80,0"/>
+                    <CustomFrms:IconMenu x:Name="MenuCloseAllNavHeader" HorizontalAlignment="Right"
+                        Text="关闭所有" FontSize="14" Foreground="White"
+                        Width="80" Height="40"/>
+                    <Canvas x:Name="CvNavHeaders" Margin="40,0,120,0" ClipToBounds="True">
+                        <StackPanel x:Name="SpNavHeaders" Orientation="Horizontal" Height="40" Canvas.Left="0">
+                            
+                        </StackPanel>
+                    </Canvas>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="1" x:Name="GdContent" Background="#FF1E1E1E">
+                <AboutMe:AboutMeModuleView/>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
