@@ -291,8 +291,14 @@
             </Path>
         </Grid>
         <Grid >
-            <TextBlock Text="穿帮广告 - Path活用" VerticalAlignment="Top" HorizontalAlignment="Center"
-                       Foreground="{Binding Path=NeonBrush}" FontSize="45" Margin="0,30,0,0"/>
+            <TextBlock Text="预祝&#x0a;从此无Bug" LineHeight="60"
+                       VerticalAlignment="Top" HorizontalAlignment="Center"
+                       Foreground="{Binding Path=NeonBrush}" FontSize="20" 
+                       Margin="0,180,0,0" TextAlignment="Center"/>
+            <TextBlock Text="穿帮广告 &#x0a; Path + DoubleAnimation" 
+                       VerticalAlignment="Top" HorizontalAlignment="Center"
+                       Foreground="{Binding Path=NeonBrush}" FontSize="32" 
+                       Margin="0,10,0,0" TextAlignment="Center"/>
             <Border Width="320" HorizontalAlignment="Left" BorderBrush="White"
                     BorderThickness="3" VerticalAlignment="Center"
                     Margin="100,-40,0,40">
