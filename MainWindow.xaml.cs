@@ -162,6 +162,7 @@ namespace WPFEffects
                 newNavHeader.Text = sText;
                 newNavHeader.Key = sKey;
                 newNavHeader.OnClosed += NewNavHeader_OnClosed;
+                newNavHeader.OnMidMouseDown += NewNavHeader_OnClosed;
                 newNavHeader.OnFocused += NewNavHeader_OnFocused;
                 newNavHeader.IsSelected = true;
                 this.SpNavHeaders.Children.Add(newNavHeader);
