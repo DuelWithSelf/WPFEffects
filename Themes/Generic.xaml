@@ -30,13 +30,6 @@
                                   Fill="{Binding Path=IconBrush, RelativeSource={RelativeSource TemplatedParent}}"
                                   Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
-                        <TextBlock Padding="{Binding Path=Padding, RelativeSource={RelativeSource TemplatedParent}}" TextAlignment="Center"
-                                   FontSize="{Binding Path=FontSize, RelativeSource={RelativeSource TemplatedParent}}" x:Name="Part_Content"
-                                   HorizontalAlignment="Center" VerticalAlignment="Center"
-                                   Margin="{Binding Path=TextMargin, RelativeSource={RelativeSource TemplatedParent}}"
-                                   Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource TemplatedParent}}"
-                                   Text="{Binding Path=Text, RelativeSource={RelativeSource TemplatedParent}}"
-                                   FontFamily="{Binding Path=FontFamily, RelativeSource={RelativeSource TemplatedParent}}"/>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsSelected" Value="True">
@@ -207,6 +200,69 @@
                             <Setter TargetName="Part_Content" Property="Foreground" Value="White"/>
                             <Setter TargetName="Part_BdrContainer" Property="Background" 
                                     Value="{StaticResource ColorBrush.LightWhite}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type CustomFrms:NormalMenu}">
+        <Setter Property="IconWidth" Value="12"/>
+        <Setter Property="IconHeight" Value="12"/>
+        <Setter Property="FocusBackground" Value="{StaticResource ColorBrush.LightWhite}"/>
+        <Setter Property="IconBrush" Value="White"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FocusBrush" Value="White"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CustomFrms:IconMenu}">
+                    <Grid x:Name="Part_GdContainer" Background="Transparent">
+                        <Border x:Name="Part_BdrContainer" Background="{TemplateBinding Background}" Padding="5"
+                                CornerRadius="{Binding Path=CornerRadius, RelativeSource={RelativeSource TemplatedParent}}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Path x:Name="Part_Icon" Width="{Binding Path=IconWidth, RelativeSource={RelativeSource TemplatedParent}}"
+                                  Height="{Binding Path=IconHeight, RelativeSource={RelativeSource TemplatedParent}}"
+                                  Data="{Binding Path=IconData, RelativeSource={RelativeSource TemplatedParent}}"
+                                  Fill="{Binding Path=IconBrush, RelativeSource={RelativeSource TemplatedParent}}"
+                                  Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <TextBlock Padding="{Binding Path=Padding, RelativeSource={RelativeSource TemplatedParent}}" TextAlignment="Center"
+                                   FontSize="{Binding Path=FontSize, RelativeSource={RelativeSource TemplatedParent}}" x:Name="Part_Content"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                                   Margin="{Binding Path=TextMargin, RelativeSource={RelativeSource TemplatedParent}}"
+                                   Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource TemplatedParent}}"
+                                   Text="{Binding Path=Text, RelativeSource={RelativeSource TemplatedParent}}"
+                                   FontFamily="{Binding Path=FontFamily, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            </StackPanel>
+                           
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="Part_Icon" Property="Fill" 
+                                    Value="{Binding Path=FocusBrush, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            <Setter TargetName="Part_BdrContainer" Property="Background" 
+                                    Value="{Binding Path=FocusBackground, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            <Setter TargetName="Part_BdrContainer" Property="BorderBrush" 
+                                    Value="{Binding Path=FocusBackground, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            <Setter TargetName="Part_Content" Property="Foreground" 
+                                    Value="{Binding Path=FocusBrush, RelativeSource={RelativeSource TemplatedParent}}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Part_GdContainer" Property="Opacity" Value="0.1"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Part_Icon" Property="Fill" 
+                                    Value="{Binding Path=FocusBrush, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            <Setter TargetName="Part_Content" Property="Foreground" 
+                                    Value="{Binding Path=FocusBrush, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            <Setter TargetName="Part_BdrContainer" Property="BorderBrush" 
+                                    Value="{Binding Path=FocusBackground, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            <Setter TargetName="Part_BdrContainer" Property="Background" 
+                                    Value="{Binding Path=FocusBackground, RelativeSource={RelativeSource TemplatedParent}}"/>
+                          
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

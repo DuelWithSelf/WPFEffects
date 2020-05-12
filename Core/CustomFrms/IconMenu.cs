@@ -89,23 +89,7 @@ namespace WPFEffects.Core.CustomFrms
             DependencyProperty.Register("CornerRadius", typeof(CornerRadius), typeof(IconMenu),
                 new FrameworkPropertyMetadata(new CornerRadius(0)));
 
-        public string Text
-        {
-            get { return (string)base.GetValue(TextProperty); }
-            set { base.SetValue(TextProperty, value); }
-        }
-        public static readonly DependencyProperty TextProperty =
-            DependencyProperty.Register("Text", typeof(string), typeof(IconMenu),
-                new FrameworkPropertyMetadata(""));
-
-        public Thickness TextMargin
-        {
-            get { return (Thickness)base.GetValue(TextMarginProperty); }
-            set { base.SetValue(TextMarginProperty, value); }
-        }
-        public static readonly DependencyProperty TextMarginProperty =
-            DependencyProperty.Register("TextMargin", typeof(Thickness), typeof(IconMenu),
-                new FrameworkPropertyMetadata(new Thickness(5, 0, 0, 0)));
+       
 
         static IconMenu()
         {

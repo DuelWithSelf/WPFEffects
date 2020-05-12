@@ -6,8 +6,38 @@
              xmlns:CustomFrms="clr-namespace:WPFEffects.Core.CustomFrms"
              xmlns:Modules="clr-namespace:WPFEffects.Modules" Background="#FF1E1E1E"
              mc:Ignorable="d" d:DesignHeight="540" d:DesignWidth="960" >
+    <UserControl.Resources>
+        <Style x:Key="NormalMenu.Primary" TargetType="{x:Type CustomFrms:NormalMenu}">
+            <Setter Property="IconBrush" Value="Gray"/>
+            <Setter Property="Foreground" Value="Gray"/>
+            <Setter Property="FocusBrush" Value="White"/>
+            <Setter Property="FocusBackground" Value="#FF459745"/>
+            <Setter Property="Margin" Value="5,0"/>
+        </Style>
+
+        <Style x:Key="NormalMenu.Large" TargetType="{x:Type CustomFrms:NormalMenu}">
+            <Setter Property="IconBrush" Value="White"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FocusBrush" Value="Cyan"/>
+            <Setter Property="FocusBackground" Value="#FFA67226"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="IconWidth" Value="18"/>
+            <Setter Property="IconHeight" Value="18"/>
+            <Setter Property="TextMargin" Value="10,0,0,0"/>
+            <Setter Property="CornerRadius" Value="3"/>
+        </Style>
+
+        <Style x:Key="NormalMenu.Border" TargetType="{x:Type CustomFrms:NormalMenu}">
+            <Setter Property="FocusBackground" Value="#FF41A0A0"/>
+            <Setter Property="Margin" Value="5,0"/>
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="2"/>
+        </Style>
+    </UserControl.Resources>
     <Grid x:Name="GdRoot">
         <StackPanel>
+            <TextBlock Text="跟FontAwesone一样的东西，WPF也可以有：" Foreground="White" Margin="10,10,0,0"/>
             <WrapPanel Margin="10">
                 <CustomFrms:IconMenu IconData="{StaticResource PathData.Close}"/>
                 <CustomFrms:IconMenu IconData="{StaticResource PathData.ChevronDoubleLeft}"/>
@@ -20,6 +50,82 @@
                 <CustomFrms:IconMenu IconData="{StaticResource PathData.FileImageRegular}"/>
                 <CustomFrms:IconMenu IconData="{StaticResource PathData.Clover}"/>
                 <CustomFrms:IconMenu IconData="{StaticResource PathData.Bullhorn}"/>
+
+                <CustomFrms:IconMenu IconData="{StaticResource PathData.CameraSolid}"/>
+                <CustomFrms:IconMenu IconData="{StaticResource PathData.CalendarAltRegular}"/>
+                <CustomFrms:IconMenu IconData="{StaticResource PathData.ClockRegular}"/>
+                <CustomFrms:IconMenu IconData="{StaticResource PathData.EditRegular}"/>
+                <CustomFrms:IconMenu IconData="{StaticResource PathData.EnvelopeRegular}"/>
+                <CustomFrms:IconMenu IconData="{StaticResource PathData.PencilAltSolid}"/>
+                <CustomFrms:IconMenu IconData="{StaticResource PathData.PlusSolid}"/>
+                <CustomFrms:IconMenu IconData="{StaticResource PathData.QuestionCircleRegular}"/>
+                <CustomFrms:IconMenu IconData="{StaticResource PathData.ReplySolid}"/>
+                <CustomFrms:IconMenu IconData="{StaticResource PathData.SyncSolid}"/>
+                <CustomFrms:IconMenu IconData="{StaticResource PathData.VolumeDownSolid}"/>
+                <CustomFrms:IconMenu IconData="{StaticResource PathData.UserCircleRegular}"/>
+                <CustomFrms:IconMenu IconData="{StaticResource PathData.TimesCircleRegular}"/>
+                <CustomFrms:IconMenu IconData="{StaticResource PathData.TagSolid}"/>
+            </WrapPanel>
+            <TextBlock Text="简洁风按钮样式:" Foreground="White" Margin="10,0,0,0"/>
+            <WrapPanel Margin="10">
+                <CustomFrms:NormalMenu IconData="{StaticResource PathData.PlusSolid}" Text="新增"/>
+                <CustomFrms:NormalMenu IconData="{StaticResource PathData.SettingsOutline}" Text="设置"/>
+                <CustomFrms:NormalMenu IconData="{StaticResource PathData.EditRegular}" Text="修改"/>
+                <CustomFrms:NormalMenu IconData="{StaticResource PathData.PencilAltSolid}" Text="编辑"/>
+                <CustomFrms:NormalMenu IconData="{StaticResource PathData.SyncSolid}" Text="刷新"/>
+                <CustomFrms:NormalMenu IconData="{StaticResource PathData.TimesCircleRegular}" Text="删除"/>
+                <CustomFrms:NormalMenu IconData="{StaticResource PathData.ReplySolid}" Text="返回"/>
+                <CustomFrms:NormalMenu IconData="{StaticResource PathData.Bullhorn}" Text="公告"/>
+                <CustomFrms:NormalMenu IconData="{StaticResource PathData.CameraSolid}" Text="快照"/>
+                <CustomFrms:NormalMenu IconData="{StaticResource PathData.EnvelopeRegular}" Text="通知"/>
+                <CustomFrms:NormalMenu IconData="{StaticResource PathData.QuestionCircleRegular}" Text="帮助"/>
+                <CustomFrms:NormalMenu IconData="{StaticResource PathData.ClockRegular}" Text="历史记录"/>
+            </WrapPanel>
+            <TextBlock Text="自定义高亮颜色:" Foreground="White" Margin="10,0,0,0"/>
+            <WrapPanel Margin="10">
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Primary}" IconData="{StaticResource PathData.PlusSolid}" Text="新增"/>
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Primary}" IsSelected="True" IconData="{StaticResource PathData.SettingsOutline}" Text="设置"/>
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Primary}" IconData="{StaticResource PathData.EditRegular}" Text="修改"/>
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Primary}" IconData="{StaticResource PathData.PencilAltSolid}" Text="编辑"/>
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Primary}" IconData="{StaticResource PathData.SyncSolid}" Text="刷新"/>
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Primary}" IconData="{StaticResource PathData.TimesCircleRegular}" Text="删除"/>
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Primary}" IconData="{StaticResource PathData.ReplySolid}" Text="返回"/>
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Primary}" IconData="{StaticResource PathData.Bullhorn}" Text="公告"/>
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Primary}" IconData="{StaticResource PathData.CameraSolid}" Text="快照"/>
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Primary}" IconData="{StaticResource PathData.EnvelopeRegular}" Text="通知"/>
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Primary}" IconData="{StaticResource PathData.QuestionCircleRegular}" Text="帮助"/>
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Primary}" IconData="{StaticResource PathData.ClockRegular}" Text="历史记录"/>
+            </WrapPanel>
+            <TextBlock Text="自定义尺寸、圆角:" Foreground="White" Margin="10,0,0,0"/>
+            <WrapPanel Margin="10">
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Large}" IconData="{StaticResource PathData.PlusSolid}" Text="新增"/>
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Large}" IconData="{StaticResource PathData.SettingsOutline}" Text="设置"/>
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Large}" IsSelected="True" IconData="{StaticResource PathData.EditRegular}" Text="修改"/>
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Large}" IconData="{StaticResource PathData.PencilAltSolid}" Text="编辑"/>
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Large}" IconData="{StaticResource PathData.SyncSolid}" Text="刷新"/>
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Large}" IconData="{StaticResource PathData.TimesCircleRegular}" Text="删除"/>
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Large}" IconData="{StaticResource PathData.ReplySolid}" Text="返回"/>
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Large}" IconData="{StaticResource PathData.Bullhorn}" Text="公告"/>
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Large}" IconData="{StaticResource PathData.CameraSolid}" Text="快照"/>
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Large}" IconData="{StaticResource PathData.EnvelopeRegular}" Text="通知"/>
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Large}" IconData="{StaticResource PathData.QuestionCircleRegular}" Text="帮助"/>
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Large}" IconData="{StaticResource PathData.ClockRegular}" Text="历史记录"/>
+            </WrapPanel>
+
+            <TextBlock Text="带边框:" Foreground="White" Margin="10,0,0,0"/>
+            <WrapPanel Margin="10">
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Border}" IconData="{StaticResource PathData.PlusSolid}" Text="新增"/>
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Border}" IsSelected="True" IconData="{StaticResource PathData.SettingsOutline}" Text="设置"/>
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Border}" IconData="{StaticResource PathData.EditRegular}" Text="修改"/>
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Border}" IconData="{StaticResource PathData.PencilAltSolid}" Text="编辑"/>
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Border}" IconData="{StaticResource PathData.SyncSolid}" Text="刷新"/>
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Border}" IconData="{StaticResource PathData.TimesCircleRegular}" Text="删除"/>
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Border}" IconData="{StaticResource PathData.ReplySolid}" Text="返回"/>
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Border}" IconData="{StaticResource PathData.Bullhorn}" Text="公告"/>
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Border}" IconData="{StaticResource PathData.CameraSolid}" Text="快照"/>
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Border}" IconData="{StaticResource PathData.EnvelopeRegular}" Text="通知"/>
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Border}" IconData="{StaticResource PathData.QuestionCircleRegular}" Text="帮助"/>
+                <CustomFrms:NormalMenu Style="{StaticResource NormalMenu.Border}" IconData="{StaticResource PathData.ClockRegular}" Text="历史记录"/>
             </WrapPanel>
         </StackPanel>
     </Grid>

@@ -79,6 +79,7 @@
     <Compile Include="Core\CustomFrms\IconMenu.cs" />
     <Compile Include="Core\CustomFrms\ListMenuItem.cs" />
     <Compile Include="Core\CustomFrms\ListMenuBox.cs" />
+    <Compile Include="Core\CustomFrms\NormalMenu.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

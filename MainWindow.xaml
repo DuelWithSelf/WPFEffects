@@ -76,9 +76,9 @@
                     <CustomFrms:IconMenu x:Name="MenuRight" HorizontalAlignment="Right"
                         IconData="{StaticResource PathData.ChevronDoubleRight}" 
                         Width="40" Height="40" Margin="0,0,80,0"/>
-                    <CustomFrms:IconMenu x:Name="MenuCloseAllNavHeader" HorizontalAlignment="Right"
-                        Text="关闭所有" FontSize="14" Foreground="White"
-                        Width="80" Height="40"/>
+                    <CustomFrms:NormalMenu x:Name="MenuCloseAllNavHeader" HorizontalAlignment="Right"
+                         FontSize="14" Foreground="White" Text="关闭所有" TextMargin="0"
+                         Width="80" Height="40" IconWidth="0" IconHeight="0"/>
                     <Canvas x:Name="CvNavHeaders" Margin="40,0,120,0" ClipToBounds="True">
                         <StackPanel x:Name="SpNavHeaders" Orientation="Horizontal" Height="40" Canvas.Left="0">
                             
