@@ -20,16 +20,19 @@ namespace WPFEffects.Core.CustomFrms
     public class NavHeader : Control
     {
         private const string Part_BdrClose = "Part_BdrClose";
+        private const string Part_Content = "Part_Content";
         private Border MenuClose;
+        private TextBlock tagName;
 
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
 
             MenuClose = GetTemplateChild(Part_BdrClose) as Border;
+            tagName = GetTemplateChild(Part_Content) as TextBlock;
         }
 
-        public NavHeader() 
+        public NavHeader()
         {
             this.Loaded += NavHeader_Loaded;
         }
@@ -38,10 +41,19 @@ namespace WPFEffects.Core.CustomFrms
         {
             this.Loaded -= NavHeader_Loaded;
 
-            if(this.MenuClose != null)
+            if (this.MenuClose != null)
+            {
                 this.MenuClose.MouseLeftButtonUp += MenuClose_MouseLeftButtonUp;
+            }
+
+            if (this.tagName != null)
+            {
+                this.tagName.MouseDown += NavHeader_MouseDown;
+            }
             this.MouseLeftButtonUp += NavHeader_MouseLeftButtonUp;
         }
+
+
 
         public event DelegateMethod<NavHeader> OnFocused;
 
@@ -50,6 +62,18 @@ namespace WPFEffects.Core.CustomFrms
             if (this.OnFocused != null)
                 this.OnFocused(this);
         }
+
+        public event DelegateMethod<NavHeader> OnMidMouseDown;
+
+        private void NavHeader_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.MiddleButton == MouseButtonState.Pressed)
+            {
+                this.OnMidMouseDown(this);
+                e.Handled = true;
+            }
+        }
+
 
         public event DelegateMethod<NavHeader> OnClosed;
 

@@ -82,10 +82,10 @@ namespace WPFEffects
             this.RectHeader.MouseDown += RectHeader_MouseDown;
             this.MenuShutdown.MouseLeftButtonUp += MenuShutdown_MouseLeftButtonUp;
 
-            for(int i = 0;i< this.SpNavItems.Children.Count; i++)
+            for (int i = 0; i < this.SpNavItems.Children.Count; i++)
             {
                 ListMenuBox menuBox = this.SpNavItems.Children[i] as ListMenuBox;
-                if(menuBox != null)
+                if (menuBox != null)
                 {
                     menuBox.OnKeySelected += MenuBox_OnKeySelected;
                 }
@@ -128,7 +128,7 @@ namespace WPFEffects
             if (this.HsPages.Contains(sKey))
             {
                 // Focus To NavHeader
-                for(int i=0; i < this.SpNavHeaders.Children.Count; i++)
+                for (int i = 0; i < this.SpNavHeaders.Children.Count; i++)
                 {
                     NavHeader navHeader = this.SpNavHeaders.Children[i] as NavHeader;
                     if (navHeader != null)
@@ -153,7 +153,7 @@ namespace WPFEffects
                 for (int i = 0; i < this.SpNavHeaders.Children.Count; i++)
                 {
                     NavHeader navHeader = this.SpNavHeaders.Children[i] as NavHeader;
-                    if(navHeader != null)
+                    if (navHeader != null)
                         navHeader.IsSelected = false;
                 }
 
@@ -162,11 +162,12 @@ namespace WPFEffects
                 newNavHeader.Text = sText;
                 newNavHeader.Key = sKey;
                 newNavHeader.OnClosed += NewNavHeader_OnClosed;
+                newNavHeader.OnMidMouseDown += NewNavHeader_OnClosed;
                 newNavHeader.OnFocused += NewNavHeader_OnFocused;
                 newNavHeader.IsSelected = true;
                 this.SpNavHeaders.Children.Add(newNavHeader);
-                
-                
+
+
                 this.UpdateNavHeaderStatus();
 
                 // 创建内容面板
@@ -184,7 +185,7 @@ namespace WPFEffects
                 for (int i = 0; i < this.SpNavHeaders.Children.Count; i++)
                 {
                     NavHeader navHeader = this.SpNavHeaders.Children[i] as NavHeader;
-                    if(navHeader != null)
+                    if (navHeader != null)
                         navHeader.IsSelected = false;
                 }
                 this.DoFocusOnNavHeader(nextFocus);
@@ -197,12 +198,12 @@ namespace WPFEffects
             nIndex -= 1;
             if (nIndex < 0)
                 nIndex = 0;
-            
+
             this.SpNavHeaders.Children.Remove(arg);
             this.GdContent.Children.Clear();
             this.HsPages.Remove(arg.Key);
 
-            if(this.SpNavHeaders.Children.Count > 0)
+            if (this.SpNavHeaders.Children.Count > 0)
             {
                 if (arg.IsSelected == true)
                 {
@@ -268,7 +269,7 @@ namespace WPFEffects
                             }
                         }
 
-                        if(!bIsChildSelect)
+                        if (!bIsChildSelect)
                             menuBox.IsExpanded = false;
                         else
                             menuBox.IsExpanded = true;
@@ -305,7 +306,7 @@ namespace WPFEffects
 
         private NavHeader GetFocusedNavHeader()
         {
-            for(int i=0; i< this.SpNavHeaders.Children.Count;i++)
+            for (int i = 0; i < this.SpNavHeaders.Children.Count; i++)
             {
                 NavHeader navItem = this.SpNavHeaders.Children[i] as NavHeader;
                 if (navItem != null && navItem.IsSelected)
@@ -320,7 +321,7 @@ namespace WPFEffects
             this.DoUpdateAvailable();
 
             NavHeader navFocus = this.GetFocusedNavHeader();
-            if(navFocus != null)
+            if (navFocus != null)
             {
                 Point posToCvNavHeader = navFocus.TranslatePoint(new Point(0, 0), this.CvNavHeaders);
                 double dMoveDistance = 0;
@@ -373,9 +374,9 @@ namespace WPFEffects
                 if (navItem != null)
                 {
                     Point posToCvNavHeader = navItem.TranslatePoint(new Point(0, 0), this.CvNavHeaders);
-                    if(posToCvNavHeader.X < 0)
+                    if (posToCvNavHeader.X < 0)
                     {
-                        if(posToCvNavHeader.X + navItem.ActualWidth < 0)
+                        if (posToCvNavHeader.X + navItem.ActualWidth < 0)
                         {
                             if (posToCvNavHeader.X > dMaxX)
                                 dMaxX = posToCvNavHeader.X;
