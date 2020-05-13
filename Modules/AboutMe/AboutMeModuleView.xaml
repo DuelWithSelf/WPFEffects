@@ -6,8 +6,16 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     x:Class="WPFEffects.Modules.AboutMe.AboutMeModuleView"
     xmlns:Modules="clr-namespace:WPFEffects.Modules"
+    xmlns:CustomFrm="clr-namespace:WPFEffects.Core.CustomFrms"
     mc:Ignorable="d" d:DesignHeight="540" d:DesignWidth="960"
     Background="#FF1E1E1E">
+    <UserControl.Resources>
+        <Storyboard x:Key="Sb.BgAnim">
+            <DoubleAnimation Storyboard.TargetName="IconArrow" 
+                             Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)"
+                             Duration="0:0:1" RepeatBehavior="Forever" AutoReverse="False" To="-10"/>
+        </Storyboard>
+    </UserControl.Resources>
     <Grid>
         <Rectangle Width="300" Height="300" Fill="{StaticResource Brush.MyShop}"
                    Margin="0,30,0,-30"/>
@@ -32,5 +40,23 @@
         <TextBlock Text="看到留言我会在后台改价,  若已付款, 我也会返款25%" FontSize="16"
                    Foreground="White"
                    HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,15"/>
+
+        <CustomFrm:NormalMenu Text="查看详情" HorizontalAlignment="Right" 
+                              x:Name="MenuToMall" VerticalAlignment="Center"
+                              Width="130" Height="40" FontSize="20" Foreground="White" Background="#0CFFFFFF"
+                              IconData="{StaticResource PathData.PaperPlane}" IconWidth="20" IconHeight="20"
+                              TextMargin="10,0,0,0" Margin="0,0,50,0"/>
+        <CustomFrm:IconMenu HorizontalAlignment="Right" IconData="{StaticResource PathData.ArrowUpSolid}"
+                            x:Name="IconArrow" VerticalAlignment="Center" 
+                            Margin="0,300,93,210" FocusBackground="Transparent">
+            <CustomFrm:IconMenu.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CustomFrm:IconMenu.RenderTransform>
+        </CustomFrm:IconMenu>
     </Grid>
 </Modules:BaseModuleView>

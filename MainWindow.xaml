@@ -29,18 +29,20 @@
                         BorderBrush="{StaticResource ColorBrush.LightWhite}">
                     <ScrollViewer Style="{StaticResource ScrollViewer.Normal}">
                         <StackPanel x:Name="SpNavItems">
-                            <CustomFrms:ListMenuBox Text="支持作者" IconData="{StaticResource PathData.Heart}" 
-                                                    Key="AboutMe"/>
+                            <CustomFrms:ListMenuBox Text="穿帮硬广" IconData="{StaticResource PathData.Bullhorn}"
+                                                    Key="Advertise"/>
                             <CustomFrms:ListMenuBox Text="组件" IconData="{StaticResource PathData.SettingsOutline}">
                                 <CustomFrms:ListMenuItem Text="PathIcon" Key="PathData"/>
-                            </CustomFrms:ListMenuBox>
-                            <CustomFrms:ListMenuBox Text="效果" IconData="{StaticResource PathData.Creation}">
-                                <CustomFrms:ListMenuItem Text="文字效果" Key="TextblockEffect"/>
                             </CustomFrms:ListMenuBox>
                             <CustomFrms:ListMenuBox Text="富媒体墙" IconData="{StaticResource PathData.Clover}">
                                 <CustomFrms:ListMenuItem Text="弧形旋转" Key="Carousel"/>
                                 <CustomFrms:ListMenuItem Text="弧形旋转3D" Key="Carousel3D"/>
                                 <CustomFrms:ListMenuItem Text="线点动画" Key="AnimLine"/>
+                            </CustomFrms:ListMenuBox>
+                            <CustomFrms:ListMenuBox Text="支持作者" IconData="{StaticResource PathData.Heart}" 
+                                                    Key="AboutMe"/>
+                            <CustomFrms:ListMenuBox Text="效果" IconData="{StaticResource PathData.Creation}">
+                                <CustomFrms:ListMenuItem Text="文字效果" Key="TextblockEffect"/>
                             </CustomFrms:ListMenuBox>
                             <CustomFrms:ListMenuBox Text="图表" IconData="{StaticResource PathData.ChartScatterplotHexbin}">
                                 <CustomFrms:ListMenuItem Text="柱状图" Key="HistogramChart"/>
@@ -54,8 +56,7 @@
                                 <CustomFrms:ListMenuItem Text="图片加载建议" Key="ImagePerformance"/>
                                 <CustomFrms:ListMenuItem Text="图片加载反例" Key="ImagePerformance2"/>
                             </CustomFrms:ListMenuBox>
-                            <CustomFrms:ListMenuBox Text="穿帮硬广" IconData="{StaticResource PathData.Bullhorn}"
-                                                    Key="Advertise"/>
+                          
 
                         </StackPanel>
                     </ScrollViewer>
@@ -87,7 +88,7 @@
                 </Grid>
             </Grid>
             <Grid Grid.Row="1" Grid.Column="1" x:Name="GdContent" Background="#FF1E1E1E">
-                <AboutMe:AboutMeModuleView/>
+                <AboutMe:AdvertiseModuleView/>
             </Grid>
         </Grid>
     </Border>
