@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -122,17 +123,10 @@ namespace WPFEffects.Core.CustomFrms
                     DoubleAnimation animArrow = new DoubleAnimation(90, TimeSpan.FromSeconds(0.2));
                     rotate.BeginAnimation(RotateTransform.AngleProperty, animArrow);
 
-                    // 子集收回动画
-                    int nChildrenCount = menuGroup.Items.Count;
-                    if(nChildrenCount > 0)
-                    {
-                        FrameworkElement item = menuGroup.Items[0] as FrameworkElement;
-                        double dItemHeight = item.ActualHeight;
-                        double dTotalChildHeight = nChildrenCount * dItemHeight;
-
-                        DoubleAnimation animItemContainer = new DoubleAnimation(dTotalChildHeight, TimeSpan.FromSeconds(0.2));
-                        menuGroup.ItemsContainer.BeginAnimation(FrameworkElement.HeightProperty, animItemContainer);
-                    }
+                    // 子集展开动画
+                    double dActualHeight = menuGroup.ItemsContainer.ActualHeight;
+                    DoubleAnimation animItemContainer = new DoubleAnimation(dActualHeight, TimeSpan.FromSeconds(0.2));
+                    menuGroup.ItemsContainer.BeginAnimation(FrameworkElement.HeightProperty, animItemContainer);
                 }
                 else
                 {

@@ -38,6 +38,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\3DTools.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Expression.Drawing, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.Expression.Drawing.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -92,11 +96,39 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Modules\Anim\AnimExpoModuleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modules\Anim\AnimFadeInModuleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modules\Anim\AnimFadeOutModuleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modules\Anim\AnimFlipModuleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Modules\Carousel\Carousel3DModuleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Modules\Carousel\CarouselModuleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modules\Chart\ClockChartModuleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modules\Chart\ClockChart\ClockSlave1View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modules\Chart\ClockChart\ClockSlave2View.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -156,6 +188,18 @@
     <Compile Include="Modules\AboutMe\AdvertiseModuleView.xaml.cs">
       <DependentUpon>AdvertiseModuleView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Anim\AnimExpoModuleView.xaml.cs">
+      <DependentUpon>AnimExpoModuleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Anim\AnimFadeInModuleView.xaml.cs">
+      <DependentUpon>AnimFadeInModuleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Anim\AnimFadeOutModuleView.xaml.cs">
+      <DependentUpon>AnimFadeOutModuleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Anim\AnimFlipModuleView.xaml.cs">
+      <DependentUpon>AnimFlipModuleView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Modules\BaseModuleView.cs" />
     <Compile Include="Modules\Carousel\Carousel3DModuleView.xaml.cs">
       <DependentUpon>Carousel3DModuleView.xaml</DependentUpon>
@@ -164,6 +208,15 @@
       <DependentUpon>CarouselModuleView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Modules\Carousel\InteractivePanel3D.cs" />
+    <Compile Include="Modules\Chart\ClockChartModuleView.xaml.cs">
+      <DependentUpon>ClockChartModuleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Chart\ClockChart\ClockSlave1View.xaml.cs">
+      <DependentUpon>ClockSlave1View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Chart\ClockChart\ClockSlave2View.xaml.cs">
+      <DependentUpon>ClockSlave2View.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Modules\Chart\HistogramChartModuleView.xaml.cs">
       <DependentUpon>HistogramChartModuleView.xaml</DependentUpon>
     </Compile>
@@ -217,7 +270,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="Assets\MyShop.png" />
   </ItemGroup>

@@ -7,6 +7,21 @@
         Background="Transparent" AllowsTransparency="True"
         WindowStyle="None" WindowState="Normal"
         Title="WPF Effect Demos" Height="626" Width="1166">
+    <Window.Resources>
+        <DataTemplate x:Key="ListMenuBox.ItemTemplate" DataType="{x:Type local:CatalogOfEffect}">
+            <Border x:Name="BdrNavItem" Background="Transparent" Height="30"
+                    MouseLeftButtonUp="BdrNavItem_MouseLeftButtonUp">
+                <TextBlock Margin="60,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"
+                           Foreground="White" Text="{Binding Path=Name, Mode=TwoWay}"/>
+            </Border>
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding Path=IsSelected}" Value="True">
+                    <Setter TargetName="BdrNavItem" Property="Background" 
+                            Value="{StaticResource ColorBrush.LightWhite}"/>
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+    </Window.Resources>
     <Border Margin="3" BorderBrush="Gray">
         <Border.Effect>
             <DropShadowEffect Color="White" ShadowDepth="0" 
@@ -16,12 +31,13 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="80"/>
                 <RowDefinition/>
+                <RowDefinition Height="30"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Grid x:Name="GdNav" Grid.RowSpan="2" Background="#FF2D2D30">
+            <Grid x:Name="GdNav" Grid.RowSpan="3" Background="#FF2D2D30">
                 <TextBlock Text="WPF 炫酷UI" Foreground="White" 
                            FontSize="30" VerticalAlignment="Top"
                            HorizontalAlignment="Center" Margin="0,25,0,0"/>
@@ -45,6 +61,7 @@
                                 <CustomFrms:ListMenuItem Text="文字效果" Key="TextblockEffect"/>
                             </CustomFrms:ListMenuBox>
                             <CustomFrms:ListMenuBox Text="图表" IconData="{StaticResource PathData.ChartScatterplotHexbin}">
+                                <CustomFrms:ListMenuItem Text="仪表盘" Key="ClockChart"/>
                                 <CustomFrms:ListMenuItem Text="柱状图" Key="HistogramChart"/>
                                 <CustomFrms:ListMenuItem Text="饼状图" Key="PieChart"/>
                                 <CustomFrms:ListMenuItem Text="弧形图" Key="RadianChart"/>
@@ -56,8 +73,10 @@
                                 <CustomFrms:ListMenuItem Text="图片加载建议" Key="ImagePerformance"/>
                                 <CustomFrms:ListMenuItem Text="图片加载反例" Key="ImagePerformance2"/>
                             </CustomFrms:ListMenuBox>
-                          
-
+                            <CustomFrms:ListMenuBox 
+                                x:Name="LmxBinding" Text="Binding示例" 
+                                IconData="{StaticResource PathData.TagSolid}"
+                                ItemTemplate="{StaticResource ListMenuBox.ItemTemplate}"/>
                         </StackPanel>
                     </ScrollViewer>
                 </Border>
@@ -87,8 +106,20 @@
                     </Canvas>
                 </Grid>
             </Grid>
-            <Grid Grid.Row="1" Grid.Column="1" x:Name="GdContent" Background="#FF1E1E1E">
+            <Grid Grid.Row="1" Grid.Column="1" x:Name="GdContent" Background="#FF1E1E1E" ClipToBounds="True">
                 <AboutMe:AdvertiseModuleView/>
+            </Grid>
+            <Grid Grid.Row="3" Grid.Column="1" Background="#FF1E1E1E">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" 
+                            HorizontalAlignment="Right" Margin="0,2,5,0">
+                    <CustomFrms:NormalMenu FocusBackground="#3F00FFFF" Margin="0,0,5,0"
+                                           IconData="{StaticResource PathData.PaperPlane}"
+                                           Text="查看更多作品" x:Name="MenuBlog"/>
+
+                    <CustomFrms:NormalMenu FocusBackground="#3F00FFFF"
+                                           IconData="{StaticResource PathData.Heart}"
+                                           Text="支持作者-【收藏店铺】" x:Name="MenuMall"/>
+                </StackPanel>
             </Grid>
         </Grid>
     </Border>

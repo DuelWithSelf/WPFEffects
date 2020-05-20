@@ -45,7 +45,7 @@ namespace WPFEffects.Modules.AboutMe
         private void MenuToMall_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             Process proc = new System.Diagnostics.Process();
-            proc.StartInfo.FileName = "https://shop173071246.taobao.com/index.htm";
+            proc.StartInfo.FileName = "https://shop173071246.taobao.com";
             proc.Start();
         }
 
