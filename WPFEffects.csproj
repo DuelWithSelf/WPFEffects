@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="3DTools, Version=1.0.2614.20437, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -93,6 +96,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Modules\AboutMe\AdvertiseModuleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modules\AboutMe\PartTimeEarnModuleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -188,6 +195,9 @@
     <Compile Include="Modules\AboutMe\AdvertiseModuleView.xaml.cs">
       <DependentUpon>AdvertiseModuleView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Modules\AboutMe\PartTimeEarnModuleView.xaml.cs">
+      <DependentUpon>PartTimeEarnModuleView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Modules\Anim\AnimExpoModuleView.xaml.cs">
       <DependentUpon>AnimExpoModuleView.xaml</DependentUpon>
     </Compile>
@@ -276,6 +286,15 @@
   <ItemGroup>
     <Resource Include="Assets\自用实拍1.jpg" />
     <Resource Include="Assets\自用实拍2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\推广.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\D1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

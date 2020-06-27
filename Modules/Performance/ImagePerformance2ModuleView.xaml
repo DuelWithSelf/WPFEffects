@@ -7,7 +7,117 @@
               mc:Ignorable="d" d:DesignHeight="540" d:DesignWidth="960"
              xmlns:Modules="clr-namespace:WPFEffects.Modules" Background="#FF1E1E1E">
     <Grid x:Name="GdRoot">
-        <TextBlock Text="正在实现中..." Foreground="White" 
-                   VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <ScrollViewer Style="{StaticResource ScrollViewer.Normal}">
+            <StackPanel>
+                <Grid Height="80">
+                    <TextBlock Text="打开此界面，进程占用内存增长约90M, 使用的越多内存越高。 需要图片用作重复背景时，谨慎直接使用Image，可使用ImageBrush资源代替。"
+                               Foreground="White" FontSize="20" VerticalAlignment="Center"
+                               HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center"
+                               Margin="50,0"/>
+                </Grid>
+                <WrapPanel Width="940">
+                    <Grid Width="75" Height="225" Margin="5">
+                        <Image Source="../../Assets/D1.jpg"/>
+                    </Grid>
+                    <Grid Width="75" Height="225" Margin="5">
+                        <Image Source="../../Assets/D1.jpg"/>
+                    </Grid>
+                    <Grid Width="75" Height="225" Margin="5">
+                        <Image Source="../../Assets/D1.jpg"/>
+                    </Grid>
+                    <Grid Width="75" Height="225" Margin="5">
+                        <Image Source="../../Assets/D1.jpg"/>
+                    </Grid>
+                    <Grid Width="75" Height="225" Margin="5">
+                        <Image Source="../../Assets/D1.jpg"/>
+                    </Grid>
+                    <Grid Width="75" Height="225" Margin="5">
+                        <Image Source="../../Assets/D1.jpg"/>
+                    </Grid>
+                    <Grid Width="75" Height="225" Margin="5">
+                        <Image Source="../../Assets/D1.jpg"/>
+                    </Grid>
+                    <Grid Width="75" Height="225" Margin="5">
+                        <Image Source="../../Assets/D1.jpg"/>
+                    </Grid>
+                    <Grid Width="75" Height="225" Margin="5">
+                        <Image Source="../../Assets/D1.jpg"/>
+                    </Grid>
+                    <Grid Width="75" Height="225" Margin="5">
+                        <Image Source="../../Assets/D1.jpg"/>
+                    </Grid>
+                    <Grid Width="75" Height="225" Margin="5">
+                        <Image Source="../../Assets/D1.jpg"/>
+                    </Grid>
+                    <Grid Width="75" Height="225" Margin="5">
+                        <Image Source="../../Assets/D1.jpg"/>
+                    </Grid>
+                    <Grid Width="75" Height="225" Margin="5">
+                        <Image Source="../../Assets/D1.jpg"/>
+                    </Grid>
+                    <Grid Width="75" Height="225" Margin="5">
+                        <Image Source="../../Assets/D1.jpg"/>
+                    </Grid>
+                    <Grid Width="75" Height="225" Margin="5">
+                        <Image Source="../../Assets/D1.jpg"/>
+                    </Grid>
+                    <Grid Width="75" Height="225" Margin="5">
+                        <Image Source="../../Assets/D1.jpg"/>
+                    </Grid>
+                    <Grid Width="75" Height="225" Margin="5">
+                        <Image Source="../../Assets/D1.jpg"/>
+                    </Grid>
+                    <Grid Width="75" Height="225" Margin="5">
+                        <Image Source="../../Assets/D1.jpg"/>
+                    </Grid>
+                    <Grid Width="75" Height="225" Margin="5">
+                        <Image Source="../../Assets/D1.jpg"/>
+                    </Grid>
+                    <Grid Width="75" Height="225" Margin="5">
+                        <Image Source="../../Assets/D1.jpg"/>
+                    </Grid>
+                    <Grid Width="75" Height="225" Margin="5">
+                        <Image Source="../../Assets/D1.jpg"/>
+                    </Grid>
+                    <Grid Width="75" Height="225" Margin="5">
+                        <Image Source="../../Assets/D1.jpg"/>
+                    </Grid>
+                    <Grid Width="75" Height="225" Margin="5">
+                        <Image Source="../../Assets/D1.jpg"/>
+                    </Grid>
+                    <Grid Width="75" Height="225" Margin="5">
+                        <Image Source="../../Assets/D1.jpg"/>
+                    </Grid>
+                    <Grid Width="75" Height="225" Margin="5">
+                        <Image Source="../../Assets/D1.jpg"/>
+                    </Grid>
+                    <Grid Width="75" Height="225" Margin="5">
+                        <Image Source="../../Assets/D1.jpg"/>
+                    </Grid>
+                    <Grid Width="75" Height="225" Margin="5">
+                        <Image Source="../../Assets/D1.jpg"/>
+                    </Grid>
+                    <Grid Width="75" Height="225" Margin="5">
+                        <Image Source="../../Assets/D1.jpg"/>
+                    </Grid>
+                    <Grid Width="75" Height="225" Margin="5">
+                        <Image Source="../../Assets/D1.jpg"/>
+                    </Grid>
+                    <Grid Width="75" Height="225" Margin="5">
+                        <Image Source="../../Assets/D1.jpg"/>
+                    </Grid>
+                    <Grid Width="75" Height="225" Margin="5">
+                        <Image Source="../../Assets/D1.jpg"/>
+                    </Grid>
+                    <Grid Width="75" Height="225" Margin="5">
+                        <Image Source="../../Assets/D1.jpg"/>
+                    </Grid>
+                    <Grid Width="75" Height="225" Margin="5">
+                        <Image Source="../../Assets/D1.jpg"/>
+                    </Grid>
+                </WrapPanel>
+            </StackPanel>
+           
+        </ScrollViewer>
     </Grid>
 </Modules:BaseModuleView>

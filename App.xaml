@@ -18,6 +18,7 @@
                     </Style>
 
                     <ImageBrush x:Key="Brush.MyShop" ImageSource="Assets/MyShop.png"/>
+                    <ImageBrush x:Key="Brush.Test" ImageSource="Assets/D1.jpg"/>
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

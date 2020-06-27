@@ -5,10 +5,10 @@
         xmlns:CustomFrms="clr-namespace:WPFEffects.Core.CustomFrms"
         xmlns:local="clr-namespace:WPFEffects" WindowStartupLocation="CenterScreen"
         Background="Transparent" AllowsTransparency="True"
-        WindowStyle="None" WindowState="Normal"
+        WindowStyle="None" WindowState="Normal" Icon="Icon.ico"
         Title="WPF Effect Demos" Height="626" Width="1166">
     <Window.Resources>
-        <DataTemplate x:Key="ListMenuBox.ItemTemplate" DataType="{x:Type local:CatalogOfEffect}">
+        <DataTemplate x:Key="ListMenuBox.Normal" DataType="{x:Type local:CatalogOfEffect}">
             <Border x:Name="BdrNavItem" Background="Transparent" Height="30"
                     MouseLeftButtonUp="BdrNavItem_MouseLeftButtonUp">
                 <TextBlock Margin="60,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"
@@ -38,7 +38,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid x:Name="GdNav" Grid.RowSpan="3" Background="#FF2D2D30">
-                <TextBlock Text="WPF 炫酷UI" Foreground="White" 
+                <TextBlock Text="WPF UI" Foreground="White" 
                            FontSize="30" VerticalAlignment="Top"
                            HorizontalAlignment="Center" Margin="0,25,0,0"/>
                 <Border Margin="0,80,0,0" BorderThickness="0,1,0,0" 
@@ -55,8 +55,10 @@
                                 <CustomFrms:ListMenuItem Text="弧形旋转3D" Key="Carousel3D"/>
                                 <CustomFrms:ListMenuItem Text="线点动画" Key="AnimLine"/>
                             </CustomFrms:ListMenuBox>
-                            <CustomFrms:ListMenuBox Text="支持作者" IconData="{StaticResource PathData.Heart}" 
-                                                    Key="AboutMe"/>
+                            <CustomFrms:ListMenuBox Text="支持作者" IconData="{StaticResource PathData.Heart}">
+                                <CustomFrms:ListMenuItem Text="作者网店" Key="AboutMe"/>
+                                <CustomFrms:ListMenuItem Text="一起赚零花" Key="PartTimeEarn"/>
+                            </CustomFrms:ListMenuBox>
                             <CustomFrms:ListMenuBox Text="效果" IconData="{StaticResource PathData.Creation}">
                                 <CustomFrms:ListMenuItem Text="文字效果" Key="TextblockEffect"/>
                             </CustomFrms:ListMenuBox>
@@ -74,9 +76,8 @@
                                 <CustomFrms:ListMenuItem Text="图片加载反例" Key="ImagePerformance2"/>
                             </CustomFrms:ListMenuBox>
                             <CustomFrms:ListMenuBox 
-                                x:Name="LmxBinding" Text="Binding示例" 
-                                IconData="{StaticResource PathData.TagSolid}"
-                                ItemTemplate="{StaticResource ListMenuBox.ItemTemplate}"/>
+                                x:Name="LmxBinding" Text="Binding示例" ItemTemplate="{StaticResource ListMenuBox.Normal}"
+                                IconData="{StaticResource PathData.TagSolid}"/>
                         </StackPanel>
                     </ScrollViewer>
                 </Border>

@@ -8,6 +8,7 @@
                         mc:Ignorable="d" d:DesignHeight="540" d:DesignWidth="960"
             xmlns:Modules="clr-namespace:WPFEffects.Modules" Background="#FF1E1E1E">
     <Grid x:Name="GdRoot">
+        <Rectangle Fill="Transparent" x:Name="RectOverZm"/>
         <ThirdDll:Interactive3DDecorator x:Name="DecoratorZm">
             <Viewport3D x:Name="Viewport3DZm">
                 <Viewport3D.Camera>
@@ -40,6 +41,6 @@
             </Viewport3D>
         </ThirdDll:Interactive3DDecorator>
 
-        <Rectangle Fill="Transparent" x:Name="RectOverZm"/>
+        
     </Grid>
 </Modules:BaseModuleView>

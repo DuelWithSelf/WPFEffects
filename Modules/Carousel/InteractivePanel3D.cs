@@ -82,7 +82,13 @@ namespace WPFEffects.Modules.Carousel
             if (this.FileSrc == "")
                 return null;
             AnimImage oItem = new AnimImage(this.FileSrc);
+            oItem.MouseLeftButtonUp += OItem_MouseLeftButtonUp;
             return oItem;
+        }
+
+        private void OItem_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            MessageBox.Show(" Raise your Route Events");
         }
 
         public void Dispose()

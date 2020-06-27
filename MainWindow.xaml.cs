@@ -44,6 +44,10 @@ namespace WPFEffects
 
     public class CatalogOfEffect: BaseRecord
     {
+        public CatalogOfEffect()
+        {
+        }
+
         private string _Name;
         public string Name {
             get { return _Name; }
@@ -81,6 +85,8 @@ namespace WPFEffects
                 return new AboutMeModuleView();
             else if (sKey == "Advertise")
                 return new AdvertiseModuleView();
+            else if (sKey == "PartTimeEarn")
+                return new PartTimeEarnModuleView();
 
             // 组件
             else if (sKey == "PathData")
@@ -132,13 +138,11 @@ namespace WPFEffects
             InitializeComponent();
 
             ObservableCollection<CatalogOfEffect> ltCatalogs = new System.Collections.ObjectModel.ObservableCollection<CatalogOfEffect>();
-            ltCatalogs.Add(new CatalogOfEffect() { Name = "淡入动效", Key="AnimFadeIn" });
+            ltCatalogs.Add(new CatalogOfEffect() { Name = "翻转动效", Key="AnimFlip" });
+            ltCatalogs.Add(new CatalogOfEffect() { Name = "淡入动效", Key = "AnimFadeIn" });
             ltCatalogs.Add(new CatalogOfEffect() { Name = "淡出动效", Key = "AnimFadeOut" });
-            ltCatalogs.Add(new CatalogOfEffect() { Name = "翻转动效", Key = "AnimFlip" });
             ltCatalogs.Add(new CatalogOfEffect() { Name = "爆炸动效", Key = "AnimExpo" });
             this.LmxBinding.ItemsSource = ltCatalogs;
-
-            
 
             this.Loaded += MainWindow_Loaded;
             this.Closing += MainWindow_Closing;
@@ -198,82 +202,8 @@ namespace WPFEffects
 
         private void MenuBox_OnKeySelected(ListMenuBox sender, string sText, string sKey)
         {
-            //// 取消其他ListMenuBox的选中状态
-            //for (int i = 0; i < this.SpNavItems.Children.Count; i++)
-            //{
-            //    ListMenuBox menuBox = this.SpNavItems.Children[i] as ListMenuBox;
-            //    if (menuBox != null && menuBox != sender)
-            //    {
-            //        menuBox.CancelSelectAll();
-            //    }
-            //}
-
-            //// 取消绑定示例的选中状态
-            //ObservableCollection<CatalogOfEffect> ltItems = this.LmxBinding.ItemsSource as ObservableCollection<CatalogOfEffect>;
-            //if (ltItems != null && ltItems.Count > 0)
-            //{
-            //    for (int i = 0; i < ltItems.Count; i++)
-            //        ltItems[i].IsSelected = false;
-            //}
             this.CancelSelectStatus(sender);
             this.GetMenuContentPage(sText, sKey);
-
-            //// 创建界面
-            //if (this.HsPages == null)
-            //    this.HsPages = new Hashtable();
-
-            //this.GdContent.Children.Clear();
-            //if (this.HsPages.Contains(sKey))
-            //{
-            //    // Focus To NavHeader
-            //    for (int i = 0; i < this.SpNavHeaders.Children.Count; i++)
-            //    {
-            //        NavHeader navHeader = this.SpNavHeaders.Children[i] as NavHeader;
-            //        if (navHeader != null)
-            //        {
-            //            if (navHeader.Key != sKey)
-            //                navHeader.IsSelected = false;
-            //            else
-            //                navHeader.IsSelected = true;
-            //        }
-            //    }
-
-            //    // Move NavHeader Container keep current navheader visible
-            //    this.UpdateNavHeaderStatus();
-
-            //    BaseModuleView moduleView = this.HsPages[sKey] as BaseModuleView;
-            //    if (moduleView != null)
-            //        this.GdContent.Children.Add(moduleView);
-            //}
-            //else
-            //{
-            //    // 取消顶部导览按钮选中状态
-            //    for (int i = 0; i < this.SpNavHeaders.Children.Count; i++)
-            //    {
-            //        NavHeader navHeader = this.SpNavHeaders.Children[i] as NavHeader;
-            //        if (navHeader != null)
-            //            navHeader.IsSelected = false;
-            //    }
-
-            //    // 创建顶部导览按钮
-            //    NavHeader newNavHeader = new NavHeader();
-            //    newNavHeader.Text = sText;
-            //    newNavHeader.Key = sKey;
-            //    newNavHeader.OnClosed += NewNavHeader_OnClosed;
-            //    newNavHeader.OnMidMouseDown += NewNavHeader_OnClosed;
-            //    newNavHeader.OnFocused += NewNavHeader_OnFocused;
-            //    newNavHeader.IsSelected = true;
-            //    this.SpNavHeaders.Children.Add(newNavHeader);
-
-
-            //    this.UpdateNavHeaderStatus();
-
-            //    // 创建内容面板
-            //    BaseModuleView moduleView = this.CreateContentView(sKey);
-            //    this.GdContent.Children.Clear();
-            //    this.GdContent.Children.Add(moduleView);
-            //    this.HsPages.Add(sKey, moduleView);
-            //}
         }
 
         private void CancelSelectStatus(ListMenuBox sender)
