@@ -34,13 +34,6 @@
                    HorizontalAlignment="Center" VerticalAlignment="Top"/>
         </StackPanel>
 
-        <TextBlock Text="如果你喜欢我的商品，下单留言  &quot;程序猿&quot;  三个字，我店铺商品一律7.5折" 
-                   Foreground="White" FontSize="20"
-                   HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,50"/>
-        <TextBlock Text="看到留言我会在后台改价,  若已付款, 我也会返款25%" FontSize="16"
-                   Foreground="White"
-                   HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,15"/>
-
         <CustomFrm:NormalMenu Text="查看详情" HorizontalAlignment="Right" 
                               x:Name="MenuToMall" VerticalAlignment="Center"
                               Width="130" Height="40" FontSize="20" Foreground="White" Background="#0CFFFFFF"
