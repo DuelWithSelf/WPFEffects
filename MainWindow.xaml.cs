@@ -101,6 +101,8 @@ namespace WPFEffects
                 return new Carousel3DModuleView();
             else if (sKey == "AnimLine")
                 return new AnimLineModuleView();
+            else if (sKey == "Carousel3DInverse")
+                return new MvCarousel3DInverse();
 
             // 图片
             else if (sKey == "ImgCoordinate")

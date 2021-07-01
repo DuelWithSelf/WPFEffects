@@ -127,6 +127,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Modules\Carousel\MvCarousel3DInverse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Modules\Chart\ClockChartModuleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -218,6 +222,9 @@
       <DependentUpon>CarouselModuleView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Modules\Carousel\InteractivePanel3D.cs" />
+    <Compile Include="Modules\Carousel\MvCarousel3DInverse.xaml.cs">
+      <DependentUpon>MvCarousel3DInverse.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Modules\Chart\ClockChartModuleView.xaml.cs">
       <DependentUpon>ClockChartModuleView.xaml</DependentUpon>
     </Compile>

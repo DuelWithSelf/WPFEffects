@@ -1,10 +1,9 @@
-﻿<Modules:BaseModuleView 
-    x:Class="WPFEffects.Modules.Carousel.Carousel3DModuleView"
+﻿<Modules:BaseModuleView
+    x:Class="WPFEffects.Modules.Carousel.MvCarousel3DInverse"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-    xmlns:local="clr-namespace:WPFEffects.Modules.Carousel"
     xmlns:ThirdDll="clr-namespace:_3DTools;assembly=3DTools"
     mc:Ignorable="d" d:DesignHeight="540" d:DesignWidth="960"
     xmlns:Modules="clr-namespace:WPFEffects.Modules" Background="#FF1E1E1E">
@@ -13,7 +12,7 @@
         <ThirdDll:Interactive3DDecorator x:Name="DecoratorZm">
             <Viewport3D x:Name="Viewport3DZm">
                 <Viewport3D.Camera>
-                    <PerspectiveCamera x:Name="CameraZm" Position="0,0,30" LookDirection="0,0,-1" FieldOfView="75">
+                    <PerspectiveCamera x:Name="CameraZm" Position="0,0,0" LookDirection="0,0,-1" FieldOfView="75">
                         <PerspectiveCamera.Transform>
                             <Transform3DGroup>
                                 <TranslateTransform3D OffsetX="0" OffsetY="0" OffsetZ="0" x:Name="CameraTranslateZm"/>
@@ -42,6 +41,6 @@
             </Viewport3D>
         </ThirdDll:Interactive3DDecorator>
 
-        
+
     </Grid>
 </Modules:BaseModuleView>
